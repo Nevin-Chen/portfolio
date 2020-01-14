@@ -1,17 +1,19 @@
 $primary-color: #e5e4e2;
-$text-color: #e5e4e2;
+$text-color: #333;
 $main-links: #3376da;
-$card-color: #111;
-$main-font: "Anonymous Pro", sans-serif;
+$card-color: #151515;
+$card-font: "Anonymous Pro", sans-serif;
+$text-font: "Roboto", sans-serif;
+$header-font: "Open Sans", sans-serif;
 
 body {
-  font-family: $main-font;
+  font-family: $text-font;
   background: $primary-color;
   color: $text-color;
   margin: 2%;
 }
 
-/* Center info card */
+/* Center console card */
 
 .center-text {
   width: 100%;
@@ -21,14 +23,21 @@ body {
 }
 
 .center-card {
+  font-family: $card-font;
   background: $card-color;
-  border: 3px solid #d4af37;
-  border-radius: 5px;
+  color: $primary-color;
+  border: 5px solid #b7a9a1;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 25%;
   flex-wrap: wrap;
+}
+
+.footer-right {
+  float: right;
+  margin: 0 0 2% 0;
 }
 
 /* Navigation */
@@ -43,22 +52,28 @@ body {
   flex-grow: 2;
   font-size: 40px;
   font-weight: 900;
-  font-family: "Roboto", sans-serif;
+  font-family: $text-font;
 }
 
 .nav-items {
-  flex-grow: 3;
-  display: flex;
-  justify-content: space-evenly;
   padding-inline-start: 0px;
-  font-family: "Roboto", sans-serif;
+  font-family: $text-font;
   font-weight: 700;
+  list-style-type: none;
+}
+
+button:focus {
+  outline: none;
 }
 
 /* Link hover effect */
 a {
   color: $main-links;
   text-decoration: none;
+}
+
+a:focus {
+  outline: none;
 }
 
 a:hover {
@@ -132,25 +147,6 @@ a:hover {
   }
 }
 
-/* Hidden Text */
-// .hidingEffect {
-//     animation: hidingEffect 0s ease-in 10s forwards;
-// }
-// @keyframes hidingEffect {
-//     to {
-//         width:0;
-//         height:0;
-//         overflow:hidden;
-//     }
-// }
-// @-webkit-keyframes hidingEffect {
-//     to {
-//         width:0;
-//         height:0;
-//         visibility:hidden;
-//     }
-// }
-
 /* Mobile & Tablet responsiveness */
 
 @media only screen and (max-width: 600px) {
@@ -158,12 +154,13 @@ a:hover {
     display: block;
     align-content: center;
   }
+
   h1 {
     font-size: 12px;
   }
+
   .center-card {
     background: $card-color;
-    border: 2px solid #ffa500;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -171,12 +168,98 @@ a:hover {
     padding: 50% 20% 50% 20%;
     flex-wrap: wrap;
   }
+
   .logo {
     display: flex;
     justify-content: center;
     align-content: center;
     font-size: 20px;
     font-weight: 900;
-    font-family: "Roboto", sans-serif;
+  }
+
+  .nav-items {
+    flex-grow: 3;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .center-card {
+    margin: 0 10% 0 0;
+  }
+
+  .nav-items {
+    position: absolute;
+    right: 3%;
+    top: 10%;
+    padding-inline-start: 0px;
+    font-family: $text-font;
+    font-size: 20px;
+    font-weight: 700;
+    list-style-type: none;
+  }
+
+  /* Navigation buttons */
+  .roundHex {
+    position: relative;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    height: 144px;
+    width: 90px;
+    box-sizing: border-box;
+    transition: all 1s;
+    border: 8px solid transparent;
+    border-top-color: #1f2833;
+    border-bottom-color: #1f2833;
+    transform: rotate(30deg);
+    margin-top: 20px;
+    font-size: 20px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-30deg);
+      color: #090909;
+      width: 100%;
+      height: 100%;
+      line-height: 53px;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      border: inherit;
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      background: inherit;
+      border-radius: inherit;
+      height: 100%;
+      width: 100%;
+      box-sizing: content-box;
+    }
+    &:before {
+      transform: rotate(60deg);
+    }
+    &:after {
+      transform: rotate(-60deg);
+    }
+    &:hover {
+      border-top-color: #6dc6e4;
+      border-bottom-color: #6dc6e4;
+      cursor: pointer;
+      a {
+        color: #000;
+      }
+    }
+    &:focus {
+      border-top-color: #000000;
+      border-bottom-color: #000000;
+      background: rgba(6, 130, 172, 0.05);
+      transform: rotate(-330deg);
+    }
   }
 }
