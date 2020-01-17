@@ -1,4 +1,4 @@
-$primary-color: #e5e4e2;
+$primary-color: #ffffff;
 $text-color: #333;
 $main-links: #3376da;
 $card-color: #151515;
@@ -15,11 +15,20 @@ body {
 
 hr {
   border-top: 2px dashed #8c8b8b;
-  width: 70%;
+  width: 80%;
 }
 
 .hidden-hr {
   display: none;
+}
+
+/* Main content */
+.about-content,
+.projects-content,
+.experience-content,
+.education-content,
+.contact-content {
+  padding: 2% 10% 2% 10%;
 }
 
 .centered-header > h1 {
@@ -38,30 +47,31 @@ hr {
 }
 
 .center-text {
-  width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  align-content: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .center-card {
-  margin: 0 12% 0 0;
-  width: 90%;
+  margin: 0 5% 0 0;
+  padding: 5%;
+  width: 70%;
   font-family: $card-font;
   background: $card-color;
-  color: $primary-color;
+  color: #29ce6e;
   border: 5px solid #b7a9a1;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  align-content: center;
 }
 
 /* Navigation */
 
 .nav-main {
-  margin: 0 0 2% 1%;
+  margin: 0 5% 0 0;
   display: flex;
   align-content: center;
 }
@@ -102,7 +112,6 @@ a:hover {
 
 .typewriter-one,
 .typewriter-two {
-  margin: 0 0 0 5%;
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;
@@ -157,12 +166,9 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 769px) {
-}
-
 /* CSS buttons for larger devices */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1000px) {
   /* main screen with buttons */
   .main-screen-buttons {
     display: flex;
@@ -170,7 +176,7 @@ a:hover {
     flex-wrap: nowrap;
   }
 
-  /* Modal boxes */
+  /* Main Content */
   .about {
     display: none;
   }
@@ -180,9 +186,6 @@ a:hover {
   .experience {
     display: none;
   }
-  .education {
-    display: none;
-  }
   .contact {
     display: none;
   }
@@ -190,21 +193,24 @@ a:hover {
   .about,
   .projects,
   .experience,
-  .education .contact {
+  .contact {
     position: fixed;
     z-index: 1;
     top: 0;
     height: 80%;
     width: 75%;
     overflow: auto;
-    background-color: rgba(240, 255, 255, 0.85);
+    background-color: #192150d9;
     margin: 5%;
     padding: 20px;
-    border: 3px solid #473d8a;
+    border: 3px solid #f0f323;
     border-radius: 10px;
   }
 
-  .close-content {
+  .about-close-content,
+  .projects-close-content,
+  .experience-close-content,
+  .contact-close-content {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -221,10 +227,9 @@ a:hover {
     }
   }
 
+  /* Nav Menu */
+
   .nav-items {
-    // position: absolute;
-    // right: 3%;
-    // top: 10%;
     padding-inline-start: 0px;
     font-family: $text-font;
     font-size: 20px;
@@ -232,7 +237,6 @@ a:hover {
     list-style-type: none;
   }
 
-  /* Navigation buttons */
   .roundHex {
     position: relative;
     margin: 0 auto;
@@ -279,18 +283,21 @@ a:hover {
       transform: rotate(-60deg);
     }
     &:hover {
-      border-top-color: #6dc6e4;
-      border-bottom-color: #6dc6e4;
+      border-top-color: #3376da;
+      border-bottom-color: #3376da;
       cursor: pointer;
       a {
-        color: #000;
+        color: #3376da;
       }
     }
     &:focus {
-      border-top-color: #000000;
-      border-bottom-color: #000000;
+      border-top-color: #3376da;
+      border-bottom-color: #3376da;
       background: rgba(6, 130, 172, 0.05);
       transform: rotate(-330deg);
+      a {
+        color: #3376da;
+      }
     }
   }
 
@@ -306,16 +313,21 @@ a:hover {
 
 /* mobile devices */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 999px) {
   .hidden-hr {
     display: flex;
   }
 
   .center-card {
-    margin: 0%;
+    margin: 5%;
+    width: auto;
+    padding: 20% 0 20% 0;
   }
 
-  .close-content {
+  .about-close-content,
+  .projects-close-content,
+  .experience-close-content,
+  .contact-close-content {
     display: none;
   }
 
@@ -326,13 +338,7 @@ a:hover {
   }
 
   .center-card {
-    background: $card-color;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50% 20% 50% 20%;
-    flex-wrap: wrap;
+    font-size: 12px;
   }
 
   .logo {
@@ -347,12 +353,19 @@ a:hover {
   }
 
   .contact-content {
-    margin-top: 5%;
     display: flex;
     justify-content: center;
   }
 }
 
+@media only screen and (max-width: 680px) {
+  .center-card {
+    font-size: 8px;
+  }
+}
+
 @media only screen and (max-width: 480px) {
-  //nav items need to become icons
+  .center-card {
+    display: none;
+  }
 }

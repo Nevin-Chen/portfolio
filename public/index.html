@@ -39,7 +39,7 @@
             </button>
           </li>
           <li>
-            <button class="roundHex experience-education-button">
+            <button class="roundHex experience-button">
               <a href="#"
                 ><div class="top"></div>
                 <div class="middle">EXPERIENCE</div>
@@ -61,135 +61,144 @@
 
       <!-- Center typewriter display -->
       <div class="center-card">
+        <div class="dummy-buttons">
+          <div class="red"></div>
+          <div class="yellow"></div>
+          <div class="green"></div>
+        </div>
         <h1 class="center-text">Hi, I'm Nevin Chen</h1>
         <h1 class="typewriter-one">Welcome to my site.</h1>
-        <h1 class="typewriter-two">I'm a Software Engineer based in NYC!</h1>
+        <h1 class="typewriter-two">
+          I'm a Software Engineer based in NYC!
+        </h1>
       </div>
     </div>
 
-    <!-- about me content -->
-    <div class="about">
-      <span class="close-content">&times;</span>
+    <div id="main-content">
+      <!-- about me content -->
+      <div class="about">
+        <span class="about-close-content">&times;</span>
+        <div class="centered-header">
+          <h1>ABOUT ME</h1>
+        </div>
+        <hr class="hidden-hr" />
+        <div class="about-content">
+          <p>
+            I'm born and raised in Brooklyn, New York. I have a background in
+            Computer Systems and Infrustructure, but I've always been fascinated
+            by applications and enjoy learning about the technologies behind
+            them. My curiosity and hunger to build and problem solve is what
+            lead me to becoming a Software Engineer.
+          </p>
+          <p>
+            I'm proficient in JavaScript and skilled in developing RESTful
+            applications using Node.js, Express, React, Redux, and SQL
+            databases.
+          </p>
+          <p>
+            I'm currently learning Python, and it's thrilling to use the
+            built-in libraries for algorithms!
+          </p>
+        </div>
+      </div>
       <hr class="hidden-hr" />
-      <div class="centered-header">
-        <h1>ABOUT ME</h1>
-      </div>
-      <hr />
-      <div class="about-content">
-        <p>
-          I'm born and raised in Brooklyn, New York. I have a background in
-          Computer Systems and Infrustructure, but I've always been fascinated
-          by applications and enjoy learning about the technologies behind them.
-          My curiosity and hunger to build and problem solve is what lead me to
-          becoming a Software Engineer.
-        </p>
-        <p>
-          I'm proficient in JavaScript and skilled in developing RESTful
-          applications using Node.js, Express, React, Redux, and SQL databases.
-        </p>
-        <p>
-          I'm currently learning Python, and it's thrilling to use the built-in
-          libraries for algorithms!
-        </p>
-      </div>
-    </div>
 
-    <!-- project content -->
-    <hr class="hidden-hr" />
-    <div class="projects centered-content">
-      <div class="centered-header">
+      <!-- project content -->
+      <div class="projects">
+        <span class="projects-close-content">&times;</span>
+        <div class="centered-header">
+          <h1>PROJECTS</h1>
+        </div>
         <hr class="hidden-hr" />
-        <h1>PROJECTS</h1>
-        <hr />
+        <div class="projects-content">
+          <div>
+            <h3>ESC</h3>
+            <p>
+              A web application that provides users a unique way to finding new
+              travel destinations based on their Instagram feed or images
+              uploaded from their devices. The users are recommended the
+              cheapest flight costs around their area.
+            </p>
+            <p>
+              Technology - HTML, CSS, JavaScript, Node.js, Express, React,
+              Redux, Redis, PostgreSQL, Google Cloud Vision API, Amadeus API,
+              and Semantic UI
+            </p>
+            <p>
+              Check it out at - ESC | GitHub
+            </p>
+            <h3>What Should I Eat?</h3>
+            <p>
+              A web application that provides users an easy-to-use solution to
+              deciding on food choices around their location.
+            </p>
+            <p>
+              Technology - HTML, JavaScript, Node.js, React, Express, Bulma io,
+              Google Maps API, Foursquare API
+            </p>
+            <p>
+              Check it out at - WSIE | GitHub
+            </p>
+            <h3></h3>
+            <p>
+              A Fullstack E-Commerce web application for flowers, pottery, and
+              gardening equipment.
+            </p>
+            <p>
+              Technology - HTML, CSS, JavaScript, Node.js, Express, PostgreSQL,
+              Sequelize, React, Redux
+            </p>
+            <p>Check it out at - Orchid Raven | GitHub</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="projects-content">
-      <div>
-        <h3>ESC</h3>
-        <p>
-          A web application that provides users a unique way to finding new
-          travel destinations based on their Instagram feed or images uploaded
-          from their devices. The users are recommended the cheapest flight
-          costs around their area.
-        </p>
-        <p>
-          Technology - HTML, CSS, JavaScript, Node.js, Express, React, Redux,
-          Redis, PostgreSQL, Google Cloud Vision API, Amadeus API, and Semantic
-          UI
-        </p>
-        <p>
-          Check it out at - ESC | GitHub
-        </p>
-        <h3>What Should I Eat?</h3>
-        <p>
-          A web application that provides users an easy-to-use solution to
-          deciding on food choices around their location.
-        </p>
-        <p>
-          Technology - HTML, JavaScript, Node.js, React, Express, Bulma io,
-          Google Maps API, Foursquare API
-        </p>
-        <p>
-          Check it out at - WSIE | GitHub
-        </p>
-        <h3></h3>
-        <p>
-          A Fullstack E-Commerce web application for flowers, pottery, and
-          gardening equipment.
-        </p>
-        <p>
-          Technology - HTML, CSS, JavaScript, Node.js, Express, PostgreSQL,
-          Sequelize, React, Redux
-        </p>
-        <p>Check it out at - Orchid Raven | GitHub</p>
-      </div>
-    </div>
-    <hr class="hidden-hr" />
+      <hr class="hidden-hr" />
 
-    <!-- experience content -->
-    <div class="experience centered-content">
-      <div class="centered-header">
+      <!-- experience content -->
+      <div class="experience">
+        <span class="experience-close-content">&times;</span>
+        <div class="centered-header">
+          <h1>EXPERIENCE</h1>
+        </div>
         <hr class="hidden-hr" />
-        <h1>EXPERIENCE</h1>
-        <hr />
-      </div>
-    </div>
-    <div class="experience-content">
-      <div>
-        <p>SUNY DOWNSTATE MEDICAL CENTER - July 2017 - Feb. 2019</p>
-        <p>MINDSHIFT TECHNOLOGIES - May 2016 - Sept. 2016</p>
-      </div>
-    </div>
-    <hr class="hidden-hr" />
-    <div class="education centered-content">
-      <div class="centered-header">
+        <div class="experience-content">
+          <div>
+            <p>SUNY DOWNSTATE MEDICAL CENTER - July 2017 - Feb. 2019</p>
+            <p>MINDSHIFT TECHNOLOGIES - May 2016 - Sept. 2016</p>
+          </div>
+        </div>
         <hr class="hidden-hr" />
-        <h1>EDUCATION</h1>
-        <hr />
+        <div class="education centered-content">
+          <div class="centered-header">
+            <h1>EDUCATION</h1>
+          </div>
+          <hr class="hidden-hr" />
+        </div>
+        <!-- education content -->
+        <div class="education-content">
+          <div>
+            <p>
+              FULLSTACK ACADEMY - Software Engineering Immersive Program - May
+              2019
+            </p>
+            <p>
+              NEW YORK CITY COLLEGE OF TECHNOLOGY - Bachelor's in Technology |
+              Computer Systems - June 2017
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- education content -->
-    <div class="education-content">
-      <div>
-        <p>
-          FULLSTACK ACADEMY - Software Engineering Immersive Program - May 2019
-        </p>
-        <p>
-          NEW YORK CITY COLLEGE OF TECHNOLOGY - Bachelor's in Technology |
-          Computer Systems - June 2017
-        </p>
-      </div>
-    </div>
+      <hr class="hidden-hr" />
 
-    <!-- contact menu -->
-    <hr class="hidden-hr" />
-    <div class="contact centered-content">
-      <div class="centered-header">
+      <!-- contact menu -->
+      <div class="contact">
+        <span class="contact-close-content">&times;</span>
+        <div class="centered-header">
+          <h1>CONTACT ME</h1>
+        </div>
         <hr class="hidden-hr" />
-        <h1>CONTACT ME</h1>
-        <hr />
+        <div class="contact-content">Email | LinkedIn | GitHub | Resume</div>
       </div>
     </div>
-    <div class="contact-content">Email | LinkedIn | GitHub | Resume</div>
   </body>
 </html>

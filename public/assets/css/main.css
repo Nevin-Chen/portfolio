@@ -1,17 +1,26 @@
 body {
   font-family: "Roboto", sans-serif;
-  background: #e5e4e2;
+  background: #ffffff;
   color: #333;
   margin: 2%;
 }
 
 hr {
   border-top: 2px dashed #8c8b8b;
-  width: 70%;
+  width: 80%;
 }
 
 .hidden-hr {
   display: none;
+}
+
+/* Main content */
+.about-content,
+.projects-content,
+.experience-content,
+.education-content,
+.contact-content {
+  padding: 2% 10% 2% 10%;
 }
 
 .centered-header > h1 {
@@ -35,23 +44,22 @@ hr {
 }
 
 .center-text {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .center-card {
-  margin: 0 12% 0 0;
-  width: 90%;
+  margin: 0 5% 0 0;
+  padding: 5%;
+  width: 70%;
   font-family: "Anonymous Pro", sans-serif;
   background: #151515;
-  color: #e5e4e2;
+  color: #29ce6e;
   border: 5px solid #b7a9a1;
   border-radius: 10px;
   display: -webkit-box;
@@ -65,11 +73,13 @@ hr {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 /* Navigation */
 .nav-main {
-  margin: 0 0 2% 1%;
+  margin: 0 5% 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,7 +125,6 @@ a:hover {
 
 .typewriter-one,
 .typewriter-two {
-  margin: 0 0 0 5%;
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;
@@ -210,7 +219,7 @@ a:hover {
 }
 
 /* CSS buttons for larger devices */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1000px) {
   /* main screen with buttons */
   .main-screen-buttons {
     display: -webkit-box;
@@ -223,7 +232,7 @@ a:hover {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
-  /* Modal boxes */
+  /* Main Content */
   .about {
     display: none;
   }
@@ -233,29 +242,29 @@ a:hover {
   .experience {
     display: none;
   }
-  .education {
-    display: none;
-  }
   .contact {
     display: none;
   }
   .about,
   .projects,
   .experience,
-  .education .contact {
+  .contact {
     position: fixed;
     z-index: 1;
     top: 0;
     height: 80%;
     width: 75%;
     overflow: auto;
-    background-color: rgba(240, 255, 255, 0.85);
+    background-color: #192150d9;
     margin: 5%;
     padding: 20px;
-    border: 3px solid #473d8a;
+    border: 3px solid #f0f323;
     border-radius: 10px;
   }
-  .close-content {
+  .about-close-content,
+  .projects-close-content,
+  .experience-close-content,
+  .contact-close-content {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -265,11 +274,18 @@ a:hover {
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
-  .close-content:hover, .close-content:focus {
+  .about-close-content:hover, .about-close-content:focus,
+  .projects-close-content:hover,
+  .projects-close-content:focus,
+  .experience-close-content:hover,
+  .experience-close-content:focus,
+  .contact-close-content:hover,
+  .contact-close-content:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
   }
+  /* Nav Menu */
   .nav-items {
     -webkit-padding-start: 0px;
             padding-inline-start: 0px;
@@ -278,7 +294,6 @@ a:hover {
     font-weight: 700;
     list-style-type: none;
   }
-  /* Navigation buttons */
   .roundHex {
     position: relative;
     margin: 0 auto;
@@ -336,19 +351,22 @@ a:hover {
             transform: rotate(-60deg);
   }
   .roundHex:hover {
-    border-top-color: #6dc6e4;
-    border-bottom-color: #6dc6e4;
+    border-top-color: #3376da;
+    border-bottom-color: #3376da;
     cursor: pointer;
   }
   .roundHex:hover a {
-    color: #000;
+    color: #3376da;
   }
   .roundHex:focus {
-    border-top-color: #000000;
-    border-bottom-color: #000000;
+    border-top-color: #3376da;
+    border-bottom-color: #3376da;
     background: rgba(6, 130, 172, 0.05);
     -webkit-transform: rotate(-330deg);
             transform: rotate(-330deg);
+  }
+  .roundHex:focus a {
+    color: #3376da;
   }
   .logo {
     display: none;
@@ -360,16 +378,21 @@ a:hover {
 }
 
 /* mobile devices */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 999px) {
   .hidden-hr {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
   .center-card {
-    margin: 0%;
+    margin: 5%;
+    width: auto;
+    padding: 20% 0 20% 0;
   }
-  .close-content {
+  .about-close-content,
+  .projects-close-content,
+  .experience-close-content,
+  .contact-close-content {
     display: none;
   }
   .nav-main {
@@ -382,20 +405,7 @@ a:hover {
     margin: 0% 1%;
   }
   .center-card {
-    background: #151515;
-    border-radius: 5px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 50% 20% 50% 20%;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    font-size: 12px;
   }
   .logo {
     display: -webkit-box;
@@ -412,13 +422,24 @@ a:hover {
     display: flex;
   }
   .contact-content {
-    margin-top: 5%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .center-card {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .center-card {
+    display: none;
   }
 }
 /*# sourceMappingURL=main.css.map */
