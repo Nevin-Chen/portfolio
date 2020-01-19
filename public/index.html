@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Anonymous+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script defer src="./bundle.js"></script>
   </head>
   <body>
@@ -22,7 +26,7 @@
         <ul class="nav-items">
           <li>
             <button class="roundHex about-button">
-              <a href="#"
+              <a href="#about"
                 ><div class="top"></div>
                 <div class="middle">ABOUT ME</div>
                 <div class="bottom"></div
@@ -31,7 +35,7 @@
           </li>
           <li>
             <button class="roundHex projects-button">
-              <a href="#"
+              <a href="#projects"
                 ><div class="top"></div>
                 <div class="middle">PROJECTS</div>
                 <div class="bottom"></div
@@ -40,7 +44,7 @@
           </li>
           <li>
             <button class="roundHex experience-button">
-              <a href="#"
+              <a href="#experience"
                 ><div class="top"></div>
                 <div class="middle">EXPERIENCE</div>
                 <div class="bottom"></div
@@ -48,8 +52,8 @@
             </button>
           </li>
           <li>
-            <button class="roundHex contact-button">
-              <a href="#"
+            <button class="contact-button">
+              <a href="#contact"
                 ><div class="top"></div>
                 <div class="middle">CONTACT ME</div>
                 <div class="bottom"></div
@@ -71,12 +75,28 @@
         <h1 class="typewriter-two">
           I'm a Software Engineer based in NYC!
         </h1>
+        <h1 class="center-text">
+          <div class="typewriter-three">
+            <div class="contact-menu">
+              <a href="mailto:nevinchen6@gmail.com" title="email"
+                ><i class="fa fa-envelope-square"></i>EMAIL</a
+              >
+              <a href="https://www.linkedin.com/in/nevin-chen/" title="linkedin"
+                ><i class="fa fa-linkedin"></i>LINKEDIN</a
+              >
+              <a href="https://www.github.com/nevin-chen/" title="github"
+                ><i class="fa fa-github-square"></i>GITHUB</a
+              >
+            </div>
+          </div>
+        </h1>
       </div>
     </div>
 
     <div id="main-content">
+      <hr class="hidden-hr" />
       <!-- about me content -->
-      <div class="about">
+      <div id="about">
         <span class="about-close-content">&times;</span>
         <div class="centered-header">
           <h1>ABOUT ME</h1>
@@ -104,7 +124,7 @@
       <hr class="hidden-hr" />
 
       <!-- project content -->
-      <div class="projects">
+      <div id="projects">
         <span class="projects-close-content">&times;</span>
         <div class="centered-header">
           <h1>PROJECTS</h1>
@@ -139,7 +159,7 @@
             <p>
               Check it out at - WSIE | GitHub
             </p>
-            <h3></h3>
+            <h3>Orchid Raven</h3>
             <p>
               A Fullstack E-Commerce web application for flowers, pottery, and
               gardening equipment.
@@ -155,7 +175,8 @@
       <hr class="hidden-hr" />
 
       <!-- experience content -->
-      <div class="experience">
+      <div class="exp-edu">
+      <div id="experience">
         <span class="experience-close-content">&times;</span>
         <div class="centered-header">
           <h1>EXPERIENCE</h1>
@@ -167,14 +188,17 @@
             <p>MINDSHIFT TECHNOLOGIES - May 2016 - Sept. 2016</p>
           </div>
         </div>
-        <hr class="hidden-hr" />
+      </div>
+      <hr class="hidden-hr" />
+
+      <!-- education content -->
+      <div id="education">
         <div class="education centered-content">
           <div class="centered-header">
             <h1>EDUCATION</h1>
           </div>
           <hr class="hidden-hr" />
         </div>
-        <!-- education content -->
         <div class="education-content">
           <div>
             <p>
@@ -188,17 +212,26 @@
           </div>
         </div>
       </div>
-      <hr class="hidden-hr" />
+    </div>
 
       <!-- contact menu -->
-      <div class="contact">
+      <footer id="contact">
         <span class="contact-close-content">&times;</span>
-        <div class="centered-header">
+        <div class="contact-box">
           <h1>CONTACT ME</h1>
+          <div class="contact-content">
+            <a href="mailto:nevinchen6@gmail.com" title="email"
+              ><i class="fa fa-envelope-square"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/nevin-chen/" title="linkedin"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+            <a href="https://www.github.com/nevin-chen/" title="github"
+              ><i class="fa fa-github-square"></i
+            ></a>
+          </div>
         </div>
-        <hr class="hidden-hr" />
-        <div class="contact-content">Email | LinkedIn | GitHub | Resume</div>
-      </div>
+      </footer>
     </div>
   </body>
 </html>

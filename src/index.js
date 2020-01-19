@@ -1,6 +1,5 @@
-
 //about button and Modal
-const aboutContent = document.getElementsByClassName("about")[0];
+const aboutContent = document.getElementById("about");
 const aboutButton = document.getElementsByClassName("about-button")[0];
 const aboutClose = document.getElementsByClassName("about-close-content")[0];
 
@@ -19,7 +18,7 @@ window.onclick = function(event) {
 };
 
 //projects button and Modal
-const projectsContent = document.getElementsByClassName("projects")[0];
+const projectsContent = document.getElementById("projects");
 const projectsButton = document.getElementsByClassName("projects-button")[0];
 const projectsClose = document.getElementsByClassName("projects-close-content")[0];
 
@@ -34,5 +33,24 @@ projectsClose.onclick = function() {
 window.onclick = function(event) {
   if (event.target == projectsContent) {
     projectsContent.style.display = "none";
+  }
+};
+
+//experience and education button and Modal
+const expeduContent = document.getElementsByClassName("exp-edu")[0];
+const expeduButton = document.getElementsByClassName("experience-button")[0];
+const expeduClose = document.getElementsByClassName("experience-close-content")[0];
+
+expeduButton.onclick = function() {
+    expeduContent.style.display = "block";
+};
+
+expeduClose.onclick = function() {
+    expeduContent.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == expeduContent) {
+    expeduContent.style.display = "none";
   }
 };
