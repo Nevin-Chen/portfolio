@@ -237,7 +237,7 @@ a:hover {
     color: #29ce6e;
 
     &:hover {
-      color: #3376da;
+      color: #02bad3;
     }
   }
 
@@ -260,8 +260,8 @@ a:hover {
   }
 
   #about,
-  .exp-edu,
-  #projects {
+  #projects,
+  .exp-edu {
     padding-top: 5em;
     z-index: 3;
     position: fixed;
@@ -273,6 +273,10 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.6);
   }
 
+  #education {
+    margin: 2em 0 0 0;
+  }
+
   .centered-header > h1 {
     border: 3px solid #1aaa8b;
     border-bottom: none;
@@ -281,20 +285,20 @@ a:hover {
     background: linear-gradient(90deg, #fff 20%, #5f9ea0 80);
     padding: 2%;
     text-align: center;
-    width: 20.1em;
+    width: 24.48em;
     margin: 0%;
   }
 
   .centered-content {
     position: absolute;
-    left: 25%;
+    left: 20%;
     top: 15%;
   }
 
-  .centered-content-edu {
+  .centered-content-exp-edu {
     position: absolute;
-    left: 25%;
-    top: 45%;
+    left: 20%;
+    top: 15%;
   }
 
   .about-content,
@@ -309,7 +313,12 @@ a:hover {
     background-color: #fff;
     color: #2f4f4f;
     padding: 5%;
-    width: 37.8em;
+    width: 46em;
+    display: flex;
+  }
+
+  .text-content {
+    margin: 1em 0 0 2em;
   }
 
   .about-close-content,
@@ -488,6 +497,12 @@ a:hover {
     margin: 0 0 5% 0;
   }
 
+  .head-shot {
+    width: 30%;
+    height: 30%;
+    margin: 0 2em 0 0;
+  }
+
   .about-content,
   .projects-content,
   .experience-content,
@@ -498,6 +513,8 @@ a:hover {
     border-left: 0.5px #000;
     border-right: 0.5px #000;
     margin-bottom: 0%;
+    display: flex;
+    align-items: center;
   }
 
   .about-close-content,
@@ -531,8 +548,14 @@ a:hover {
   .contact-content > a {
     color: #02bad3;
     &:hover {
-        color: #7e7e7e
+      color: #7e7e7e;
     }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .head-shot {
+    display: none;
   }
 }
 
