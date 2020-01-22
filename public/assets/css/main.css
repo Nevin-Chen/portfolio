@@ -21,8 +21,30 @@ hr {
 }
 
 /* Main content */
-.about-content > p {
+.project-description {
+  padding: 0 3em 0 3em;
+  text-align: center;
+}
+
+.project-description h3 {
+  margin-bottom: 0.1em;
+}
+
+.project-description p:nth-child(3) {
+  margin-top: 0;
+}
+
+.text-content > p {
   text-indent: 50px;
+}
+
+.project-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 2em;
 }
 
 /* Center console card */
@@ -114,7 +136,7 @@ button:focus {
 }
 
 a {
-  color: #3376da;
+  color: #3592a3;
   text-decoration: none;
 }
 
@@ -124,6 +146,10 @@ a:focus {
 
 a:hover {
   color: #333;
+}
+
+#collapse-menu {
+  display: none;
 }
 
 /* Typewriter effect */
@@ -296,7 +322,7 @@ a:hover {
     color: #29ce6e;
   }
   .contact-menu > a:hover {
-    color: #02bad3;
+    color: #dddddd;
   }
   .contact-menu > a > i {
     margin: 0 0.3em 0 0;
@@ -317,8 +343,7 @@ a:hover {
   #about,
   #projects,
   .exp-edu {
-    padding-top: 5em;
-    z-index: 3;
+    z-index: 1;
     position: fixed;
     left: 0;
     top: 0;
@@ -376,14 +401,14 @@ a:hover {
   .projects-close-content,
   .experience-close-content,
   .contact-close-content {
-    position: absolute;
+    position: fixed;
     top: 0em;
     right: 0.3em;
     color: #fff;
     font-size: 4em;
     font-weight: bold;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    -webkit-transition: ease-out 2s;
+    transition: ease-out 2s;
   }
   .about-close-content:hover, .about-close-content:focus,
   .projects-close-content:hover,
@@ -398,8 +423,6 @@ a:hover {
   }
   /* Nav Menu */
   .nav-items {
-    -webkit-padding-start: 0px;
-            padding-inline-start: 0px;
     font-family: "Roboto", sans-serif;
     font-size: 20px;
     font-weight: 700;
@@ -423,22 +446,6 @@ a:hover {
             transform: rotate(30deg);
     margin-top: 2.2em;
     font-size: 20px;
-  }
-  .roundHex a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-    color: #090909;
-    width: 100%;
-    height: 100%;
   }
   .roundHex:before, .roundHex:after {
     content: "";
@@ -468,18 +475,31 @@ a:hover {
     -webkit-box-shadow: 0px 10px 10px -5px #00000080;
             box-shadow: 0px 10px 10px -5px #00000080;
   }
-  .roundHex:hover a {
+  .roundHex:hover .middle {
     color: #02bad3;
   }
-  .roundHex:focus {
+  .roundHex:focus, .roundHex:active {
     border-top-color: #02bad3;
     border-bottom-color: #02bad3;
     background: rgba(255, 255, 255, 0.1);
     -webkit-box-shadow: 0px 10px 10px -5px #00000080;
             box-shadow: 0px 10px 10px -5px #00000080;
   }
-  .roundHex:focus a {
-    color: #02bad3;
+  .middle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+    color: #090909;
+    width: 100%;
+    height: 100%;
   }
   .contact-button {
     display: none;
@@ -491,8 +511,14 @@ a:hover {
 
 /* mobile devices */
 @media only screen and (max-width: 999px) {
+  body {
+    margin-top: 6em;
+  }
   /* navigation and typewriter */
   .nav-main {
+    position: fixed;
+    z-index: 1;
+    top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -530,10 +556,17 @@ a:hover {
         -ms-flex-positive: 1;
             flex-grow: 1;
   }
-  .nav-items > li > button {
-    font-size: 14px;
-    background: transparent;
+  .close {
+    width: 100%;
+  }
+  .open {
+    width: 100%;
+  }
+  .nav-items > a > li > button {
+    font-size: 16px;
+    background: #dcdcdc;
     border-radius: 2em;
+    width: 100%;
   }
   .centered-header > h1 {
     background: #5f9ea0;
@@ -591,9 +624,20 @@ a:hover {
   .about-close-content,
   .projects-close-content,
   .experience-close-content,
-  .contact-close-content,
-  .typewriter-three {
+  .contact-close-content {
     display: none;
+  }
+  .typewriter-three {
+    margin: 0;
+    display: none;
+  }
+  #about-anchor,
+  #projects-anchor,
+  #experience-anchor {
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    visibility: hidden;
   }
   /* footer */
   footer {
@@ -618,9 +662,6 @@ a:hover {
     margin: 0 5% 0 5%;
     font-size: 2.5em;
   }
-  .contact-content > a {
-    color: #02bad3;
-  }
   .contact-content > a:hover {
     color: #7e7e7e;
   }
@@ -630,14 +671,67 @@ a:hover {
   .head-shot {
     display: none;
   }
+  .project-description > img {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 680px) {
   .center-card {
     font-size: 8px;
   }
-  .nav-items > li > button {
-    font-size: 10px;
+  /* nav menu */
+  .nav-items {
+    display: inline;
+    position: fixed;
+    height: 100%;
+    width: 0%;
+    z-index: 1;
+    top: 3.2em;
+    right: 0;
+    background-color: #b3b3b380;
+    overflow-x: hidden;
+    margin: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .nav-items > a > li {
+    padding: 0;
+    width: auto;
+  }
+  .nav-items > a > li:hover, .nav-items > a > li:focus, .nav-items > a > li:active {
+    background: #02bad380;
+  }
+  .nav-items > a > li > button {
+    background: transparent;
+    font-size: 20px;
+    border: none;
+    padding: 1.5em;
+  }
+  .close {
+    width: 0%;
+  }
+  .open {
+    width: 70%;
+  }
+  #collapse-menu {
+    display: block;
+    padding: 1em 1.5em 1em 1.5em;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    margin: 0 0.43em 0 0;
+  }
+  #collapse-menu:hover, #collapse-menu:focus, #collapse-menu:active {
+    background: #02bad3;
+  }
+  .about-button:hover,
+  .projects-button:hover,
+  .experience-button:hover,
+  .contact-button:hover {
+    cursor: pointer;
+  }
+  .project-links {
+    padding: 0 0 0 0;
   }
 }
 
@@ -650,6 +744,7 @@ a:hover {
             animation: none;
     white-space: normal;
     text-align: center;
+    margin: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -24,43 +24,42 @@
           <a href="/">NEVIN CHEN</a>
         </div>
         <ul class="nav-items">
-          <li>
-            <button class="roundHex about-button">
-              <a href="#about"
-                ><div class="top"></div>
+          <a href="#about-anchor"
+            ><li>
+              <button class="roundHex about-button">
+                <div class="top"></div>
                 <div class="middle">ABOUT ME</div>
-                <div class="bottom"></div
-              ></a>
-            </button>
-          </li>
-          <li>
-            <button class="roundHex projects-button">
-              <a href="#projects"
-                ><div class="top"></div>
+                <div class="bottom"></div>
+              </button></li
+          ></a>
+          <a href="#projects-anchor"
+            ><li>
+              <button class="roundHex projects-button">
+                <div class="top"></div>
                 <div class="middle">PROJECTS</div>
-                <div class="bottom"></div
-              ></a>
-            </button>
-          </li>
-          <li>
-            <button class="roundHex experience-button">
-              <a href="#experience"
-                ><div class="top"></div>
+                <div class="bottom"></div>
+              </button></li
+          ></a>
+          <a href="#experience-anchor"
+            ><li>
+              <button class="roundHex experience-button">
+                <div class="top"></div>
                 <div class="middle">EXPERIENCE</div>
-                <div class="bottom"></div
-              ></a>
-            </button>
-          </li>
-          <li>
-            <button class="contact-button">
-              <a href="#contact"
-                ><div class="top"></div>
+                <div class="bottom"></div>
+              </button></li
+          ></a>
+          <a href="#contact"
+            ><li>
+              <button class="contact-button">
+                <div class="top"></div>
                 <div class="middle">CONTACT ME</div>
-                <div class="bottom"></div
-              ></a>
-            </button>
-          </li>
+                <div class="bottom"></div>
+              </button></li
+          ></a>
         </ul>
+        <div id="collapse-menu">
+          <i class=" fa fa-bars" aria-hidden="true"></i>
+        </div>
       </nav>
 
       <!-- Center typewriter display -->
@@ -99,11 +98,13 @@
       <span class="about-close-content">&times;</span>
       <div class="centered-content">
         <div class="centered-header">
+          <span id="about-anchor"></span>
           <h1>ABOUT ME</h1>
         </div>
         <hr class="hidden-hr" />
         <div class="about-content">
-          <img class="head-shot"
+          <img
+            class="head-shot"
             src="https://res.cloudinary.com/dkdkftvsq/image/upload/h_300,w_300,g_face,r_max,bo_2px_solid_rgb:02bad3,c_fill/v1579539869/HS_bun6n1.png"
             alt="self-photo"
           />
@@ -121,8 +122,8 @@
               databases.
             </p>
             <p>
-              I'm currently learning Python and it's thrilling to be learning and using the
-              built-in libraries for algorithms!
+              I'm currently learning Python and it's thrilling to be learning
+              and using the built-in libraries for algorithms!
             </p>
           </div>
         </div>
@@ -135,48 +136,93 @@
       <span class="projects-close-content">&times;</span>
       <div class="centered-content">
         <div class="centered-header">
+          <span id="projects-anchor"></span>
           <h1>PROJECTS</h1>
         </div>
         <hr class="hidden-hr" />
         <div class="projects-content">
           <div>
-            <h3>ESC</h3>
-            <p>
-              A web application that provides users a unique way to finding new
-              travel destinations based on their Instagram feed or images
-              uploaded from their devices. The users are recommended the
-              cheapest flight costs around their area.
+            <h2 class="center-text">ESC</h2>
+            <div class="project-description">
+              <img
+                src="https://res.cloudinary.com/dkdkftvsq/image/upload/c_scale,w_400/v1579655766/esc-screenshot_lsidzk.png"
+              />
+              <p>
+                A web application that provides users a unique way to finding
+                new travel destinations based on their Instagram feed or images
+                uploaded from their devices. The users are recommended the
+                cheapest flight costs around their area.
+              </p>
+              <h3>Technologies used:</h3>
+              <p>
+                HTML, CSS, JavaScript, Node.js, Express, React, Redux, Redis,
+                PostgreSQL, Google Cloud Vision API, Amadeus API, and Semantic
+                UI
+              </p>
+            </div>
+            <h3 class="center-text">View the application:</h3>
+            <p class="project-links">
+              <a href="https://lets-esc.herokuapp.com"
+                ><i class="fa fa-globe"></i
+              ></a>
+              <a href="https://github.com/Nevin-Chen/esc"
+                ><i class="fa fa-github-square"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/watch?v=wVlX2Kq-o2o&list=PLx0iOsdUOUmk9wbCJIHGsqBWYV29-3c0I&index=10"
+                ><i class="fa fa-youtube"></i
+              ></a>
             </p>
-            <p>
-              Technology - HTML, CSS, JavaScript, Node.js, Express, React,
-              Redux, Redis, PostgreSQL, Google Cloud Vision API, Amadeus API,
-              and Semantic UI
+            <hr />
+            <h2 class="center-text">What Should I Eat?</h2>
+            <div class="project-description">
+              <img
+                src="https://res.cloudinary.com/dkdkftvsq/image/upload/c_scale,w_400/v1579652034/wsie-screenshot_zvrm1h.png"
+              />
+              <p>
+                A web application that provides users an easy-to-use solution to
+                deciding on food choices around their location.
+              </p>
+              <h3>Technologies used:</h3>
+              <p>
+                HTML, JavaScript, Node.js, React, Express, Bulma io, Google Maps
+                API, Foursquare API
+              </p>
+            </div>
+            <h3 class="center-text">View the application:</h3>
+            <p class="project-links">
+              <a href="https://wsie.herokuapp.com"
+                ><i class="fa fa-globe"></i
+              ></a>
+              <a href="https://github.com/Nevin-Chen/what-should-i-eat"
+                ><i class="fa fa-github-square"></i
+              ></a>
             </p>
-            <p>
-              Check it out at - ESC | GitHub
+            <hr />
+            <h2 class="center-text">Orchid Raven</h2>
+            <div class="project-description">
+              <img
+                src="https://res.cloudinary.com/dkdkftvsq/image/upload/v1579652091/Orchid-Raven-Logo_loqcp3.png"
+              />
+              <p>
+                A Fullstack E-Commerce web application for flowers, pottery, and
+                gardening equipment.
+              </p>
+              <h3>Technologies used:</h3>
+              <p>
+                HTML, CSS, JavaScript, Node.js, Express, PostgreSQL, Sequelize,
+                React, Redux
+              </p>
+            </div>
+            <h3 class="center-text">View the application:</h3>
+            <p class="project-links">
+              <a href="https://orchid-raven.herokuapp.com"
+                ><i class="fa fa-globe"></i
+              ></a>
+              <a href="https://github.com/Nevin-Chen/grace-shopper"
+                ><i class="fa fa-github-square"></i
+              ></a>
             </p>
-            <h3>What Should I Eat?</h3>
-            <p>
-              A web application that provides users an easy-to-use solution to
-              deciding on food choices around their location.
-            </p>
-            <p>
-              Technology - HTML, JavaScript, Node.js, React, Express, Bulma io,
-              Google Maps API, Foursquare API
-            </p>
-            <p>
-              Check it out at - WSIE | GitHub
-            </p>
-            <h3>Orchid Raven</h3>
-            <p>
-              A Fullstack E-Commerce web application for flowers, pottery, and
-              gardening equipment.
-            </p>
-            <p>
-              Technology - HTML, CSS, JavaScript, Node.js, Express, PostgreSQL,
-              Sequelize, React, Redux
-            </p>
-            <p>Check it out at - Orchid Raven | GitHub</p>
           </div>
         </div>
       </div>
@@ -189,6 +235,7 @@
       <div class="centered-content-exp-edu">
         <div id="experience">
           <div class="centered-header">
+            <span id="experience-anchor"></span>
             <h1>EXPERIENCE</h1>
           </div>
           <hr class="hidden-hr" />

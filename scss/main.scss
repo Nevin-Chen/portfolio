@@ -1,6 +1,6 @@
 $primary-color: #e5e4e2;
 $text-color: #333;
-$main-links: #3376da;
+$main-links: #3592a3;
 $card-color: #151515;
 $card-font: "Anonymous Pro", sans-serif;
 $text-font: "Roboto", sans-serif;
@@ -30,8 +30,25 @@ hr {
 
 /* Main content */
 
-.about-content > p {
+.project-description {
+  padding: 0 3em 0 3em;
+  text-align: center;
+  h3 {
+    margin-bottom: 0.1em;
+  }
+  p:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+.text-content > p {
   text-indent: 50px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2em;
 }
 
 /* Center console card */
@@ -121,6 +138,10 @@ a:focus {
 
 a:hover {
   color: #333;
+}
+
+#collapse-menu {
+  display: none;
 }
 
 /* Typewriter effect */
@@ -237,7 +258,7 @@ a:hover {
     color: #29ce6e;
 
     &:hover {
-      color: #02bad3;
+      color: #dddddd;
     }
   }
 
@@ -262,8 +283,7 @@ a:hover {
   #about,
   #projects,
   .exp-edu {
-    padding-top: 5em;
-    z-index: 3;
+    z-index: 1;
     position: fixed;
     left: 0;
     top: 0;
@@ -325,13 +345,13 @@ a:hover {
   .projects-close-content,
   .experience-close-content,
   .contact-close-content {
-    position: absolute;
+    position: fixed;
     top: 0em;
     right: 0.3em;
     color: #fff;
     font-size: 4em;
     font-weight: bold;
-    transition: 0.3s;
+    transition: ease-out 2s;
 
     &:hover,
     &:focus {
@@ -344,7 +364,6 @@ a:hover {
   /* Nav Menu */
 
   .nav-items {
-    padding-inline-start: 0px;
     font-family: $text-font;
     font-size: 20px;
     font-weight: 700;
@@ -366,16 +385,6 @@ a:hover {
     transform: rotate(30deg);
     margin-top: 2.2em;
     font-size: 20px;
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: rotate(-30deg);
-      color: #090909;
-      width: 100%;
-      height: 100%;
-    }
 
     &:before,
     &:after {
@@ -401,19 +410,27 @@ a:hover {
       border-bottom-color: #02bad3;
       cursor: pointer;
       box-shadow: 0px 10px 10px -5px #00000080;
-      a {
+      .middle {
         color: #02bad3;
       }
     }
-    &:focus {
+    &:focus,
+    &:active {
       border-top-color: #02bad3;
       border-bottom-color: #02bad3;
       background: rgba(255, 255, 255, 0.1);
       box-shadow: 0px 10px 10px -5px #00000080;
-      a {
-        color: #02bad3;
-      }
     }
+  }
+
+  .middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-30deg);
+    color: #090909;
+    width: 100%;
+    height: 100%;
   }
 
   .contact-button {
@@ -424,12 +441,17 @@ a:hover {
     display: none;
   }
 }
-
 /* mobile devices */
 
 @media only screen and (max-width: 999px) {
+  body {
+    margin-top: 6em;
+  }
   /* navigation and typewriter */
   .nav-main {
+    position: fixed;
+    z-index: 1;
+    top: 0;
     display: flex;
     align-items: center;
     width: 100%;
@@ -456,10 +478,19 @@ a:hover {
     flex-grow: 1;
   }
 
-  .nav-items > li > button {
-    font-size: 14px;
-    background: transparent;
+  .close {
+    width: 100%
+  }
+
+  .open {
+      width: 100%;
+  }
+
+  .nav-items > a > li > button {
+    font-size: 16px;
+    background: #dcdcdc;
     border-radius: 2em;
+    width: 100%;
   }
 
   .centered-header > h1 {
@@ -520,9 +551,22 @@ a:hover {
   .about-close-content,
   .projects-close-content,
   .experience-close-content,
-  .contact-close-content,
-  .typewriter-three {
+  .contact-close-content {
     display: none;
+  }
+
+  .typewriter-three {
+    margin: 0;
+    display: none;
+  }
+
+  #about-anchor,
+  #projects-anchor,
+  #experience-anchor {
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    visibility: hidden;
   }
 
   /* footer */
@@ -546,7 +590,6 @@ a:hover {
   }
 
   .contact-content > a {
-    color: #02bad3;
     &:hover {
       color: #7e7e7e;
     }
@@ -557,14 +600,80 @@ a:hover {
   .head-shot {
     display: none;
   }
+  .project-description > img {
+      display: none;
+  }
 }
 
 @media only screen and (max-width: 680px) {
   .center-card {
     font-size: 8px;
   }
-  .nav-items > li > button {
-    font-size: 10px;
+
+  /* nav menu */
+
+  .nav-items {
+    display: inline;
+    position: fixed;
+    height: 100%;
+    width: 0%;
+    z-index: 1;
+    top: 3.2em;
+    right: 0;
+    background-color: #b3b3b380;
+    overflow-x: hidden;
+    margin: 0;
+    transition: all 0.5s;
+  }
+
+  .nav-items > a > li {
+    padding: 0;
+    width: auto;
+    &:hover,
+    &:focus,
+    &:active {
+      background: #02bad380;
+    }
+  }
+
+  .nav-items > a > li > button {
+    background: transparent;
+    font-size: 20px;
+    border: none;
+    padding: 1.5em;
+  }
+
+  .close {
+    width: 0%
+  }
+
+  .open {
+      width: 70%;
+  }
+
+  #collapse-menu {
+    display: block;
+    padding: 1em 1.5em 1em 1.5em;
+    transition: all 0.5s;
+    margin: 0 0.43em 0 0;
+    &:hover,
+    &:focus,
+    &:active {
+      background: #02bad3;
+    }
+  }
+
+  .about-button,
+  .projects-button,
+  .experience-button,
+  .contact-button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .project-links {
+    padding: 0 0 0 0;
   }
 }
 
@@ -576,5 +685,6 @@ a:hover {
     animation: none;
     white-space: normal;
     text-align: center;
+    margin: 0;
   }
 }
