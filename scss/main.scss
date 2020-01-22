@@ -51,6 +51,34 @@ hr {
   font-size: 2em;
 }
 
+.box-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edu-box {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.ld-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.edu-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  & > p:nth-child(1) {
+    margin-bottom: 0;
+  }
+  & > p:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
 /* Center console card */
 
 .logo {
@@ -268,13 +296,19 @@ a:hover {
 
   /* Main Content */
   #about {
-    display: none;
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
   }
   #projects {
-    display: none;
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
   }
   .exp-edu {
-    display: none;
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
   }
   #contact {
     display: none;
@@ -291,6 +325,7 @@ a:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);
+    transition: visibility 0.3s, opacity 0.3s linear;
   }
 
   #education {
@@ -321,6 +356,10 @@ a:hover {
     top: 15%;
   }
 
+  .about-content {
+    display: flex;
+  }
+
   .about-content,
   .projects-content,
   .experience-content,
@@ -334,7 +373,6 @@ a:hover {
     color: #2f4f4f;
     padding: 5%;
     width: 46em;
-    display: flex;
   }
 
   .text-content {
@@ -479,11 +517,11 @@ a:hover {
   }
 
   .close {
-    width: 100%
+    width: 100%;
   }
 
   .open {
-      width: 100%;
+    width: 100%;
   }
 
   .nav-items > a > li > button {
@@ -597,11 +635,37 @@ a:hover {
 }
 
 @media only screen and (max-width: 800px) {
+  .ld-box {
+    flex-direction: column;
+    text-align: center;
+    & > p:nth-child(1) {
+      margin-bottom: 0.5em;
+    }
+    & > p:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+
+  .edu-box {
+    width: 100%;
+    & > p:nth-child(1) {
+      width: 100%;
+      text-align: center;
+    }
+    & > p:nth-child(2) {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
   .head-shot {
     display: none;
   }
   .project-description > img {
-      display: none;
+    display: none;
   }
 }
 
@@ -644,11 +708,11 @@ a:hover {
   }
 
   .close {
-    width: 0%
+    width: 0%;
   }
 
   .open {
-      width: 70%;
+    width: 70%;
   }
 
   #collapse-menu {

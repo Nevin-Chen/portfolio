@@ -47,6 +47,49 @@ hr {
   font-size: 2em;
 }
 
+.box-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.edu-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.ld-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.edu-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 50%;
+}
+
+.edu-box > p:nth-child(1) {
+  margin-bottom: 0;
+}
+
+.edu-box > p:nth-child(2) {
+  margin-top: 0;
+}
+
 /* Center console card */
 .logo {
   -webkit-box-flex: 2;
@@ -329,13 +372,16 @@ a:hover {
   }
   /* Main Content */
   #about {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
   }
   #projects {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
   }
   .exp-edu {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
   }
   #contact {
     display: none;
@@ -351,6 +397,8 @@ a:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);
+    -webkit-transition: visibility 0.3s, opacity 0.3s linear;
+    transition: visibility 0.3s, opacity 0.3s linear;
   }
   #education {
     margin: 2em 0 0 0;
@@ -377,6 +425,11 @@ a:hover {
     left: 20%;
     top: 15%;
   }
+  .about-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .about-content,
   .projects-content,
   .experience-content,
@@ -390,9 +443,6 @@ a:hover {
     color: #2f4f4f;
     padding: 5%;
     width: 46em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
   .text-content {
     margin: 1em 0 0 2em;
@@ -664,6 +714,34 @@ a:hover {
   }
   .contact-content > a:hover {
     color: #7e7e7e;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .ld-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .ld-box > p:nth-child(1) {
+    margin-bottom: 0.5em;
+  }
+  .ld-box > p:nth-child(2) {
+    margin-top: 0;
+  }
+  .edu-box {
+    width: 100%;
+  }
+  .edu-box > p:nth-child(1) {
+    width: 100%;
+    text-align: center;
+  }
+  .edu-box > p:nth-child(2) {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
   }
 }
 

@@ -4,12 +4,15 @@ const aboutButton = document.getElementsByClassName("about-button")[0];
 const aboutClose = document.getElementsByClassName("about-close-content")[0];
 
 aboutButton.onclick = () => {
-  aboutContent.style.display = "block";
+  // aboutContent.style.display = "block";
+  aboutContent.style.visibility = "visible";
+  aboutContent.style.opacity = "1";
   closeNav();
 };
 
 aboutClose.onclick = () => {
-  aboutContent.style.display = "none";
+  aboutContent.style.visibility = "hidden";
+  aboutContent.style.opacity = "0";
 };
 
 // projects button and Modal
@@ -20,12 +23,14 @@ const projectsClose = document.getElementsByClassName(
 )[0];
 
 projectsButton.onclick = () => {
-  projectsContent.style.display = "block";
+  projectsContent.style.visibility = "visible";
+  projectsContent.style.opacity = "1";
   closeNav();
 };
 
 projectsClose.onclick = () => {
-  projectsContent.style.display = "none";
+  projectsContent.style.visibility = "hidden";
+  projectsContent.style.opacity = "0";
 };
 
 // experience and education button and Modal
@@ -36,24 +41,29 @@ const expeduClose = document.getElementsByClassName(
 )[0];
 
 expeduButton.onclick = () => {
-  expeduContent.style.display = "block";
+  expeduContent.style.visibility = "visible";
+  expeduContent.style.opacity = "1";
   closeNav();
 };
 
 expeduClose.onclick = () => {
-  expeduContent.style.display = "none";
+  expeduContent.style.visibility = "hidden";
+  expeduContent.style.opacity = "0";
 };
 
 //closes modal when clicking outside of content
 window.onclick = e => {
   if (e.target == aboutContent) {
-    aboutContent.style.display = "none";
+    aboutContent.style.visibility = "hidden";
+    aboutContent.style.opacity = "0";
   }
   if (e.target == projectsContent) {
-    projectsContent.style.display = "none";
+    projectsContent.style.visibility = "hidden";
+    projectsContent.style.opacity = "0";
   }
   if (e.target == expeduContent) {
-    expeduContent.style.display = "none";
+    expeduContent.style.visibility = "hidden";
+    expeduContent.style.opacity = "0";
   }
 };
 
